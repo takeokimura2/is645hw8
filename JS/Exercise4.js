@@ -9,8 +9,16 @@ formElement.addEventListener("submit", e => {
   customerNameValue = e.target.customername.value;
   customerEmailValue = e.target.email.value;
   paymentTypeValue = e.target.paymentType.value;
-  promoSelectionValue = e.target.promotion.value;
   locationValue = e.target.location.value;
+  promoSelectionValue = "";
+
+  if (e.target.promotion.checked) {
+    promoSelectionValue = "on";
+  }
+  else {
+    promoSelectionValue = "off";
+  }
+
 
   //create a variable for a new form data
   let fd = new FormData();

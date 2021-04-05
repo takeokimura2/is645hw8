@@ -1,0 +1,15 @@
+table, th, tr, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  table-layout: auto;
+
+}
+
+th {background-color: lightgray;}
+
+td {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+* {font-family: Calibri;}

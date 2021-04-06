@@ -68,6 +68,10 @@ const displayResult = () => {
       creationResult.textContent = users.created_at;
       document.getElementById("creationRow").appendChild(creationResult);
     })
+
+    .catch(err => {
+      console.error(err.message);
+    })
 }
 
 //detect the submission without a user name 

@@ -70,19 +70,23 @@ const displayResult = () => {
     })
 }
 
-// checkInput = () => {
+//detect the submission without a user name 
+//It does not work for some reasons!
+function checkInput() {
 
-//   if (document.getElementById("username").value === "") {
-//     const inputValidation = document.getElementById("usernameHelp")
-//     inputValidation.addEventListener("blur", e => {
-//       inputValidation.textContent = "Enter a GitHub username";
-//     })
-//   }
+  let userInput = document.getElementById("username").value;
 
-//   else {
-//     displayResult;
-//   }
-// }
+  if (userInput != '') {
+    displayResult;
+  }
+
+  else {
+    const inputValidation = document.getElementById("usernameHelp");
+    inputValidation.addEventListener("blur", e => {
+      inputValidation.textContent = "Enter a GitHub username";
+    })
+  }
+}
 const buttonElement = document.getElementById("lookup");
 
 buttonElement.addEventListener("click", displayResult);

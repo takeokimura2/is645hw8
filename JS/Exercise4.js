@@ -39,7 +39,7 @@ formElement.addEventListener("submit", e => {
   //insert a table name above the output table
   const tableTitle = document.createElement("p");
   tableTitle.textContent = "Form Data Entered";
-  tableTitle.style.font = "bold";
+  tableTitle.style.fontWeight = "bold";
   tableOutput.appendChild(tableTitle);
 
   //create and insert a table for output
@@ -76,7 +76,27 @@ formElement.addEventListener("submit", e => {
     document.getElementById("customerTable").appendChild(trElement);
   })
 
-
-
 });
 
+//Show a tip associated with a selected text area
+customerNameElement = document.getElementById("customername")
+customerNameElement.addEventListener("focus", e => {
+  document.getElementById("customernameHelp").textContent = "Enter your full name";
+})
+
+//Hide the advice when the user moves onto a different field
+customerNameElement.addEventListener("blur", e => {
+  document.getElementById("customernameHelp").textContent = "";
+})
+
+//Check email validity when field loses focus
+document.getElementById("email").addEventListener("blur", e => {
+  //match a string of the form xxx@yyy.zzz
+  const emailRegex = /.+@.+\..+/;
+
+  let validatyMessage = "";
+  if (!emailRegex.test(e.target.value)) {
+    validatyMessage = "Invalid email address";
+  }
+  document.getElementById("emailHelp").textContent = validatyMessage;
+})

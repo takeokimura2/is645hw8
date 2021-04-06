@@ -13,3 +13,8 @@ td {
 }
 
 * {font-family: Calibri;}
+
+#emailHelp {
+  font-weight: bold;
+  color: red;
+}
